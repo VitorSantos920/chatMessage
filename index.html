@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Messages</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="lerNaMemoria()">
+
+
+    <main>
+        <section class="user1">
+            <div class="content">
+                <img class="imageUser" src="assets/img/user1.jpg" alt="imagemDoPrimeiroUsuário">
+                <div class="content2">
+                    <input type="text" name="" class="campoTexto" placeholder="Digite sua mensagem..." id="user1" required>
+                    <button type="submit" class="enviar" onclick="messageUser1()"><img src="/assets/img/imgButton.png" alt="Imagem de Enviar do botão" class="ImgBotao"></button> 
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="chatMessage">
+            <div class="contentMessage">
+                <p id="pMessage"></p>
+            </div>
+        </section>
+
+        <section class="user2">
+            <div class="content">
+                <img class="imageUser" src="assets/img/user2.png" alt="imagemDoSegundoUsuário" id="BordaImg2">
+                <div class="content2">
+                    <input type="text" class="campoTexto" placeholder="Digite sua mensagem..." id="user2" required>
+                    <button type="submit" class="enviar" onclick="messageUser2()"> <img src="/assets/img/imgButton.png" alt="Imagem de Enviar do botão" class="ImgBotao"></button> 
+                </div>
+            </div>  
+         
+        </section>
+    </main>
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
