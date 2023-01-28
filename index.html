@@ -1,46 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Messages</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body onload="lerNaMemoria()">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Chat</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./img/janela-de-conversa.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <img
+          src="./img/whatsapp.png"
+          draggable="false"
+          alt="Logo do Whatsapp"
+        />
+        <h1>Whatsapp</h1>
+      </div>
+      <img src="./img/sair.png" draggable="false" alt="Ícone de sair" />
+    </header>
 
+    <section class="chat-app">
+      <section class="user-1">
+        <img
+          class="img--user user-1"
+          src="./img/user1.jpg"
+          alt="Imagem do usuário 1"
+          draggable="false"
+        />
 
-    <main>
-        <section class="user1">
-            <div class="content">
-                <img class="imageUser" src="assets/img/user1.jpg" alt="imagemDoPrimeiroUsuário">
-                <div class="content2">
-                    <input type="text" name="" class="campoTexto" placeholder="Digite sua mensagem..." id="user1" required>
-                    <button type="submit" class="enviar" onclick="messageUser1()"><img src="/assets/img/imgButton.png" alt="Imagem de Enviar do botão" class="ImgBotao"></button> 
-                   
-                </div>
-            </div>
-        </section>
+        <div class="message--user-1">
+          <input
+            type="text"
+            name="msg"
+            id="ipt-content-msg--user-1"
+            placeholder="Digite sua mensagem..."
+            onkeypress="keyPress(event, 1)"
+          />
 
-        <section class="chatMessage">
-            <div class="contentMessage">
-                <p id="pMessage"></p>
-            </div>
-        </section>
+          <img
+            src="./img/enviar.png"
+            class="send-msg--user-1"
+            alt="Botão de enviar mensagem"
+            onclick="identifyUser(1)"
+            draggable="false"
+          />
+        </div>
+      </section>
 
-        <section class="user2">
-            <div class="content">
-                <img class="imageUser" src="assets/img/user2.png" alt="imagemDoSegundoUsuário" id="BordaImg2">
-                <div class="content2">
-                    <input type="text" class="campoTexto" placeholder="Digite sua mensagem..." id="user2" required>
-                    <button type="submit" class="enviar" onclick="messageUser2()"> <img src="/assets/img/imgButton.png" alt="Imagem de Enviar do botão" class="ImgBotao"></button> 
-                </div>
-            </div>  
-         
-        </section>
-    </main>
+      <main class="messages--chat"></main>
 
+      <section class="user-2">
+        <img
+          class="img--user user-2"
+          src="./img/user2.png"
+          alt="Imagem do usuário 2"
+          draggable="false"
+        />
+
+        <div class="message--user-2">
+          <img
+            src="./img/enviar.png"
+            class="send-msg--user-2"
+            alt="Botão de enviar mensagem"
+            onclick="identifyUser(2)"
+            draggable="false"
+          />
+          <input
+            type="text"
+            name="msg"
+            id="ipt-content-msg--user-2"
+            placeholder="Digite sua mensagem..."
+            onkeypress="keyPress(event, 2)"
+          />
+        </div>
+      </section>
+    </section>
 
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
