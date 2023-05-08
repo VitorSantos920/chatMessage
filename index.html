@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Chat</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="./img/janela-de-conversa.jpg"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div>
-        <img
-          src="./assets/img/whatsapp.png"
-          draggable="false"
-          alt="Logo do Whatsapp"
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web Chat</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link
+            rel="shortcut icon"
+            href="./img/janela-de-conversa.jpg"
+            type="image/x-icon"
         />
-        <h1>Whatsapp</h1>
-      </div>
-      <img src="./assets/img/sair.png" draggable="false" alt="Ícone de sair" />
-    </header>
+    </head>
+    <body>
+        <header class="header">
+            <div>
+                <img
+                    src="./assets/img/whatsapp.png"
+                    draggable="false"
+                    alt="Logo do Whatsapp"
+                />
+                <h1>Whatsapp</h1>
+            </div>
+            <img
+                src="./assets/img/sair.png"
+                draggable="false"
+                alt="Ícone de sair"
+            />
+        </header>
 
-    <section class="chat-app">
-      <section class="user-1">
-        <img
-          class="img--user user-1"
-          src="./assets/img/user1.jpg"
-          alt="Imagem do usuário 1"
-          draggable="false"
-        />
+        <section class="chat-app">
+            <section class="user-1">
+                <img
+                    class="img--user user-1"
+                    src="./assets/img/user1.jpg"
+                    alt="Imagem do usuário 1"
+                    draggable="false"
+                />
 
-        <div class="message--user-1">
-          <input
-            type="text"
-            name="msg"
-            id="ipt-content-msg--user-1"
-            placeholder="Digite sua mensagem..."
-            onkeypress="keyPress(event, 1)"
-          />
+                <div class="message--user-1">
+                    <input
+                        type="text"
+                        name="msg"
+                        id="ipt-content-msg--user-1"
+                        placeholder="Digite sua mensagem..."
+                        onkeypress="keyPress(event, 1)"
+                    />
 
-          <img
-            src="./assets/img/enviar.png"
-            class="send-msg--user-1"
-            alt="Botão de enviar mensagem"
-            onclick="identifyUser(1)"
-            draggable="false"
-          />
-        </div>
-      </section>
+                    <img
+                        src="./assets/img/enviar.png"
+                        class="send-msg--user-1"
+                        alt="Botão de enviar mensagem"
+                        onclick="identifyUser(1)"
+                        draggable="false"
+                    />
+                </div>
+            </section>
 
-      <main class="messages--chat"></main>
+            <main class="messages--chat"></main>
 
-      <section class="user-2">
-        <img
-          class="img--user user-2"
-          src="./assets/img/user2.png"
-          alt="Imagem do usuário 2"
-          draggable="false"
-        />
+            <section class="user-2">
+                <img
+                    class="img--user user-2"
+                    src="./assets/img/user2.png"
+                    alt="Imagem do usuário 2"
+                    draggable="false"
+                />
 
-        <div class="message--user-2">
-          <img
-            src="./assets/img/enviar.png"
-            class="send-msg--user-2"
-            alt="Botão de enviar mensagem"
-            onclick="identifyUser(2)"
-            draggable="false"
-          />
-          <input
-            type="text"
-            name="msg"
-            id="ipt-content-msg--user-2"
-            placeholder="Digite sua mensagem..."
-            onkeypress="keyPress(event, 2)"
-          />
-        </div>
-      </section>
-    </section>
+                <div class="message--user-2">
+                    <img
+                        src="./assets/img/enviar.png"
+                        class="send-msg--user-2"
+                        alt="Botão de enviar mensagem"
+                        onclick="identifyUser(2)"
+                        draggable="false"
+                    />
+                    <input
+                        type="text"
+                        name="msg"
+                        id="ipt-content-msg--user-2"
+                        placeholder="Digite sua mensagem..."
+                        onkeypress="keyPress(event, 2)"
+                    />
+                </div>
+            </section>
+        </section>
 
-    <script src="./assets/js/script.js"></script>
-  </body>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>

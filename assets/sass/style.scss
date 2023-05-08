@@ -1,165 +1,171 @@
+$main-color: #008068;
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 @function to-rem($px) {
-  $rem: $px/16;
-  @return $rem + rem;
+    $rem: $px/16;
+    @return $rem + rem;
 }
 
 %flex {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 @mixin border($radius: false, $color: false) {
-  @if $radius {
-    border-radius: $radius;
-  }
+    @if $radius {
+        border-radius: $radius;
+    }
 
-  @if $color {
-    border: 2px solid $color;
-  }
+    @if $color {
+        border: 2px solid $color;
+    }
 }
 
 @mixin flex($jus: false, $gap: false, $wrap: false) {
-  @if $jus {
-    justify-content: $jus;
-  }
-  @if $gap {
-    gap: to-rem($gap);
-  }
+    @if $jus {
+        justify-content: $jus;
+    }
+    @if $gap {
+        gap: to-rem($gap);
+    }
 
-  @if $wrap {
-    flex-wrap: $wrap;
-  }
+    @if $wrap {
+        flex-wrap: $wrap;
+    }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #008068;
+    background-color: $main-color;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #036d59;
+    background-color: #036d59;
 
-  &:hover {
-    background-color: #034b3e;
-  }
+    &:hover {
+        background-color: #034b3e;
+    }
 }
 
 header {
-  background-color: #008068;
-  padding: to-rem(20) to-rem(30);
-  color: #fff;
-  @extend %flex;
-  @include flex(space-between, 20);
-
-  div {
-    @include flex($gap: 20);
+    background-color: $main-color;
+    padding: to-rem(20) to-rem(30);
+    color: #fff;
     @extend %flex;
-  }
+    @include flex(space-between, 20);
 
-  img {
-    width: to-rem(50);
-    height: to-rem(50);
-  }
+    div {
+        @include flex($gap: 20);
+        @extend %flex;
+    }
 
-  h1 {
-    font-family: monospace;
-  }
+    img {
+        width: to-rem(50);
+        height: to-rem(50);
+    }
+
+    h1 {
+        font-family: monospace;
+    }
 }
 
 .chat-app {
-  background: {
-    image: url("../img/background.png");
-    size: cover;
-    repeat: no-repeat;
-  }
-
-  display: flex;
-  @include flex($jus: space-between);
-
-  padding: to-rem(20);
-  min-height: 85vh;
-  // Users
-  img {
-    width: to-rem(50);
-    height: to-rem(50);
-    &:is(.img--user) {
-      width: to-rem(100);
-      height: to-rem(100);
-      @include border(50%, #008068);
+    background: {
+        image: url('../img/background.png');
+        size: cover;
+        repeat: no-repeat;
     }
 
-    transition: 1s;
+    display: flex;
+    @include flex($jus: space-between);
 
-    &:not(.img--user):hover {
-      opacity: 0.5;
-      transform: translate(5px, -5px);
-    }
-  }
+    padding: to-rem(20);
+    min-height: 85vh;
+    // Users
+    img {
+        width: to-rem(50);
+        height: to-rem(50);
+        &:is(.img--user) {
+            width: to-rem(100);
+            height: to-rem(100);
+            @include border(50%, $main-color);
+        }
 
-  input {
-    height: to-rem(60);
-    padding: to-rem(5);
-    @include border(10px, #808080);
-    outline: 0;
-  }
+        transition: 1s;
 
-  .message--user-1 {
-    height: to-rem(80);
-    @extend %flex;
-    @include flex($gap: 10, $wrap: wrap);
-  }
-
-  .message--user-2 {
-    @extend .message--user-1;
-  }
-
-  // messages
-  .messages--chat {
-    width: 683px;
-    margin-right: to-rem(25);
-    margin-left: to-rem(25);
-
-    .content-message--user-1,
-    .content-message--user-2 {
-      @include border(10px);
-      padding: to-rem(10);
-      margin-bottom: to-rem(10);
+        &:not(.img--user):hover {
+            opacity: 0.5;
+            transform: translate(5px, -5px);
+        }
     }
 
-    .content-message--user-1 {
-      background-color: #add8e6;
+    input {
+        height: to-rem(60);
+        padding: to-rem(5);
+        @include border(10px, #808080);
+        outline: 0;
+
+        &.active {
+            border-color: $main-color;
+        }
     }
 
-    .content-message--user-2 {
-      background-color: #90ee90;
-      text-align: right;
-      word-wrap: break-word;
+    .message--user-1 {
+        height: to-rem(80);
+        @extend %flex;
+        @include flex($gap: 10, $wrap: wrap);
     }
-  }
+
+    .message--user-2 {
+        @extend .message--user-1;
+    }
+
+    // messages
+    .messages--chat {
+        width: 683px;
+        margin-right: to-rem(25);
+        margin-left: to-rem(25);
+
+        .content-message--user-1,
+        .content-message--user-2 {
+            @include border(10px);
+            padding: to-rem(10);
+            margin-bottom: to-rem(10);
+        }
+
+        .content-message--user-1 {
+            background-color: #add8e6;
+        }
+
+        .content-message--user-2 {
+            background-color: #90ee90;
+            text-align: right;
+            word-wrap: break-word;
+        }
+    }
 }
 
 @media screen and (max-width: 320px) {
-  header img:nth-child(1) {
-    display: none;
-  }
+    header img:nth-child(1) {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 250px) {
-  header {
-    padding: to-rem(10) to-rem(20);
+    header {
+        padding: to-rem(10) to-rem(20);
 
-    img:nth-child(2) {
-      width: 30px;
-      height: 30px;
+        img:nth-child(2) {
+            width: 30px;
+            height: 30px;
+        }
     }
-  }
 }
